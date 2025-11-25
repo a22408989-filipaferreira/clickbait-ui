@@ -19,9 +19,10 @@ export default function TecnologiasPage() {
       </h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 max-w-6xl mx-auto">
-        {technologies.map((tech: Tech, i: number) => (
+        {technologies.map((tech, i) => (
           <TecnologiaCard
             key={i}
+            index={i}
             title={tech.title}
             image={tech.image}
             description={tech.description}
