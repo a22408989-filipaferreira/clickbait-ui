@@ -1,4 +1,4 @@
-import Projeto from "@/components/Projetos/Projeto";
+/*import Projeto from "@/components/Projetos/Projeto";*/
 import DescricaoProjetos from "@/components/Projetos/DescricaoProjetos";
 
 export default function ProjetosPage() {

@@ -39,7 +39,7 @@ export default function RootLayout({
           </nav>
         </header>
 
-        <main className="bg-white p-5 rounded-2xl max-w-2xl min-h-[70vh]">
+        <main className="bg-white p-5 rounded-2xl max-w-7xl min-h-[70vh] w-full">
           {children}
         </main>
 

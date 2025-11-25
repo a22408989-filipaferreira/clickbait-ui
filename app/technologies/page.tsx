@@ -1,61 +1,32 @@
 "use client";
 
-import Image from "next/image";
+import TecnologiaCard from "@/components/Tecnologias/TecnologiaCard";
 import technologiesJSON from "@/app/data/technologies.json";
-import { FaStar } from "react-icons/fa";
-
 
 interface Tech {
   title: string;
   image: string;
   description: string;
-  rating: number;
 }
 
-export default function Page() {
+export default function TecnologiasPage() {
   const technologies: Tech[] = JSON.parse(JSON.stringify(technologiesJSON));
 
   return (
     <div className="bg-gray-100 min-h-screen p-10">
-      <h1 className="text-4xl font-bold text-center text-black mb-8">Tecnologias Exploradas</h1>
+      <h1 className="text-4xl font-bold text-center text-black mb-10">
+        Tecnologias
+      </h1>
 
-      {/* grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 w-full max-w-[1600px] mx-auto px-10">
-        
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 max-w-6xl mx-auto">
         {technologies.map((tech: Tech, i: number) => (
-          <div
+          <TecnologiaCard
             key={i}
-            className="bg-white rounded-2xl shadow-md hover:shadow-xl transition border p-8 min-h-[360px] w-full md:w-64 lg:w-72 mx-auto"
-          >
-            
-            <div className="flex flex-col items-center text-center">
-
-              {/* image */}
-              <Image
-                src={`/technologies/${tech.image}`}
-                alt={tech.title}
-                width={180}
-                height={180}
-                className="rounded-lg mb-4"
-              />
-
-              {/* title */}
-              <h3 className="text-xl font-bold text-gray-900 mb-3">{tech.title}</h3>
-
-              {/* description */}
-              <p className="text-gray-700 text-sm leading-relaxed mb-4">
-                {tech.description}
-              </p>
-
-              {/* rating */}
-              <div className="flex items-center gap-2 text-yellow-500 font-bold mb-4">
-                <FaStar /> {tech.rating}
-              </div>
-            </div>
-
-          </div>
+            title={tech.title}
+            image={tech.image}
+            description={tech.description}
+          />
         ))}
-
       </div>
     </div>
   );
