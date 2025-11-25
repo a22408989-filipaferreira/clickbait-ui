@@ -1,39 +1,23 @@
-"use client";
+import Caracteristica from "@/components/Caracteristicas/Caracteristica";
 
-import { useState } from "react";
+const lista = [
+  "JSX mistura HTML com JavaScript",
+  "Componentes tornam tudo mais modular",
+  "Next.js tem routing automático",
+  "Hooks permitem controlar estado e efeitos",
+  "Renderização rápida e otimizada",
+];
 
-export default function Page() {
-  const caracteristicas = [
-    "JSX, sintaxe que mistura HTML e JS.",
-    "Componentes, funções que retornam JSX.",
-    "Componentes Reutilizáveis e Modulares.",
-    "Roteamento Automático e APIs.",
-    "Hooks: useState, useEffect e useSWR.",
-    "Renderização Rápida e SEO Friendly.",
-    "TypeScript Seguro e Escalável.",
-    "Comunidade Ativa e Popularidade.",
-  ];
-
-  const [active, setActive] = useState<number | null>(null);
-
+export default function CaracteristicasPage() {
   return (
-    <div>
-      <h2 className="text-4xl font-bold text-center text-black mt-4">Características do React e Next.js</h2>
-      <ul>
-        {caracteristicas.map((caracteristica, i) => (
-          <li
-            key={i}
-            onMouseEnter={() => setActive(i)}
-            onMouseLeave={() => setActive(null)}
-            style={{
-              cursor: "pointer",
-              color: active === i ? "orange" : "black",
-            }}
-          >
-            {caracteristica}
-          </li>
+    <div className="p-6 flex flex-col items-center gap-6">
+      <h1 className="text-3xl font-bold mb-4">Características</h1>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-3xl">
+        {lista.map((texto, index) => (
+          <Caracteristica key={index} index={index} texto={texto} />
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
