@@ -35,10 +35,11 @@ export default function RootLayout({
             <Link href="/about">Sobre</Link>
             <Link href="/characteristics">Características</Link>
             <Link href="/technologies">Tecnologias</Link>
+            <Link href="/projetos">Projetos</Link>
           </nav>
         </header>
 
-        <main className="bg-blue-200 p-5 rounded-2xl max-w-2xl min-h-[70vh]">
+        <main className="bg-white p-5 rounded-2xl max-w-2xl min-h-[70vh]">
           {children}
         </main>
 

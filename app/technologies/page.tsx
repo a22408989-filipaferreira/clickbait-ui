@@ -4,6 +4,7 @@ import Image from "next/image";
 import technologiesJSON from "@/app/data/technologies.json";
 import { FaStar } from "react-icons/fa";
 
+
 interface Tech {
   title: string;
   image: string;
@@ -16,15 +17,15 @@ export default function Page() {
 
   return (
     <div className="bg-gray-100 min-h-screen p-10">
-      <h1 className="text-4xl font-bold mb-10 text-center">Tecnologias Exploradas</h1>
+      <h1 className="text-4xl font-bold text-center text-black mb-8">Tecnologias Exploradas</h1>
 
       {/* grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 w-full max-w-[1600px] mx-auto px-10">
         
         {technologies.map((tech: Tech, i: number) => (
           <div
             key={i}
-            className="bg-white rounded-2xl shadow-md hover:shadow-xl transition border p-6"
+            className="bg-white rounded-2xl shadow-md hover:shadow-xl transition border p-8 min-h-[360px] w-full md:w-64 lg:w-72 mx-auto"
           >
             
             <div className="flex flex-col items-center text-center">
